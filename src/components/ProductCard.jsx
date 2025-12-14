@@ -1,5 +1,7 @@
+// src/components/ProductCard.jsx
 import { Link } from "react-router-dom";
 import { formatUSD } from "../utils/formatCurrency";
+import { assetPath } from "../utils/assetPath";
 
 export default function ProductCard({ product }) {
   return (
@@ -8,7 +10,7 @@ export default function ProductCard({ product }) {
         <div className="cardMedia">
           <img
             className="cardImg"
-            src={product.image}
+            src={assetPath(product.image)}
             alt={product.title}
             loading="lazy"
           />
@@ -26,16 +28,19 @@ export default function ProductCard({ product }) {
 
           <div className="cardMeta">
             <p className="cardPrice">{formatUSD(product.price)}</p>
+
             <button
-  className="quickAdd"
-  type="button"
-  onClick={(e) => {
-    e.preventDefault();
-    alert("Added to cart (demo)");
-  }}
->
-  + Add
-</button>
+              className="quickAdd"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                alert("Added to cart (demo)");
+              }}
+              aria-label={`Quick add ${product.title}`}
+            >
+              + Add
+            </button>
 
             <span className="chip">Free returns</span>
           </div>

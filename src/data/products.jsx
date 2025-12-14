@@ -1,3 +1,4 @@
+// src/data/products.js
 export const products = [
   {
     id: "1",
@@ -5,7 +6,7 @@ export const products = [
     price: 149,
     category: "Shoes",
     rating: 4.6,
-    image: "/minimal-sneakers.jpeg",
+    image: "minimal-sneakers.jpeg",
     description: "Clean everyday sneaker with a comfy sole and minimal design.",
   },
   {
@@ -14,7 +15,7 @@ export const products = [
     price: 20,
     category: "Fashion",
     rating: 4.4,
-    image: "/hoodie.jpeg",
+    image: "hoodie.jpeg",
     description: "Soft hoodie with a relaxed fit — perfect for casual wear.",
   },
   {
@@ -23,7 +24,7 @@ export const products = [
     price: 81,
     category: "Gadgets",
     rating: 4.7,
-    image: "/watch.jpeg",
+    image: "watch.jpeg",
     description: "Track your health, calls, and notifications in style.",
   },
   {
@@ -32,7 +33,7 @@ export const products = [
     price: 500,
     category: "Gadgets",
     rating: 4.5,
-    image: "/headset.jpeg",
+    image: "headset.jpeg",
     description: "Noise-isolating headset with crisp audio and deep bass.",
   },
   {
@@ -41,7 +42,7 @@ export const products = [
     price: 30,
     category: "Bags",
     rating: 4.3,
-    image: "/backpack.jpeg",
+    image: "backpack.jpeg",
     description: "Durable backpack with enough space for work and travel.",
   },
   {
@@ -50,7 +51,7 @@ export const products = [
     price: 120,
     category: "Home",
     rating: 4.2,
-    image: "/lamp.png",
+    image: "lamp.png",
     description: "Adjustable desk lamp for a clean and bright workspace.",
   },
 ];

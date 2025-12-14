@@ -1,8 +1,10 @@
+// src/pages/ProductPage.jsx
 import { Link, useParams } from "react-router-dom";
 import { products } from "../data/products";
 import { formatUSD } from "../utils/formatCurrency";
 import ProductCard from "../components/ProductCard";
 import { useMemo, useState } from "react";
+import { assetPath } from "../utils/assetPath";
 
 export default function ProductPage() {
   const { id } = useParams();
@@ -43,7 +45,7 @@ export default function ProductPage() {
 
       <div className="product-layout">
         <div className="product-media">
-          <img src={product.image} alt={product.title} />
+          <img src={assetPath(product.image)} alt={product.title} />
         </div>
 
         <div className="product-info">
@@ -75,13 +77,16 @@ export default function ProductPage() {
               >
                 −
               </button>
+
               <input
                 className="qtyInput"
                 value={qty}
+                inputMode="numeric"
                 onChange={(e) =>
                   setQty(Math.max(1, Number(e.target.value || 1)))
                 }
               />
+
               <button
                 type="button"
                 className="qtyBtn"
@@ -151,9 +156,7 @@ export default function ProductPage() {
                 <p style={{ marginTop: 0 }}>
                   ⭐ {product.rating} average rating (demo)
                 </p>
-                <p style={{ marginBottom: 0 }}>
-                  Reviews feature coming soon.
-                </p>
+                <p style={{ marginBottom: 0 }}>Reviews feature coming soon.</p>
               </div>
             )}
           </div>

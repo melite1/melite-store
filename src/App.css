@@ -154,12 +154,14 @@
 .cardImg{
   width: 100%;
   height: 220px;
-  object-fit: cover;          /* makes images feel uniform */
+  object-fit: contain; /* consistent product images */
   background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: 16px;
-  object-fit: contain;
+  display: block;
+  transition: transform .18s ease;
 }
+
 
 /* If you prefer “contain” for all products, switch to this: */
 /* .cardImg{ object-fit: contain; } */
@@ -195,7 +197,15 @@
   font-weight: 900;
   line-height: 1.25;
   font-size: 16px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* ✅ webkit */
+  line-clamp: 2;         /* ✅ standard property */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 40px;
 }
+
 
 /* Make cards feel premium */
 .card{
@@ -211,13 +221,13 @@
 }
 
 /* Keep titles same height */
-.cardTitle{
+/* .cardTitle{
   display: -webkit-box;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 40px;
-}
+} */
 
 /* Rating subtle */
 .rating{
